@@ -1,0 +1,7 @@
+python_version==3.6
+tensorflow==0.12
+rpyc==3.3.0
+numpy
+matplotlib
+cma
+scikit-learn
