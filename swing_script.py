@@ -39,7 +39,7 @@ class RobotController:
     
     def get_rate_and_angle(self):
         """ returns the rate and angle of the robot movement"""
-        angle, rate = self.gyro.rate_and_angle
+        angle, rate = self.gyro.angle_and_rate
         return (rate * self.rate_normalizer, angle * self.angle_normalizer)
 
     def get_current_leg_pos(self):
@@ -89,7 +89,7 @@ class RobotController:
             # sample for one second
             t0 = t = time.time()
             while t - t0 < 3:
-                _, rate = self.gyro.rate_and_angle
+                _, rate = self.gyro.angle_and_rate
                 rates.append(rate)
                 t = time.time()
                 times.append(t)
@@ -168,8 +168,6 @@ class RobotControllerExceptionWrapper(RobotController):
             return self.move_legs(pos)
 
 try:
-    #ROBOT_HOSTNAME = "192.168.137.131" #"ev3dev.local"
-    #ROBOT_HOSTNAME = "fe80::57be:5279:1dc:8e82"
     ROBOT_HOSTNAME = "ev3dev.local"
     conn = rpyc.classic.connect(ROBOT_HOSTNAME, ipv6=True)
     conn.execute("print('Hello Slave. I am your , master!')")
