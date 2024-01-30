@@ -1,6 +1,6 @@
 # legorobot
 This repository is a distilled version of https://github.com/SteffenCzolbe/LEGO-machine-learning, containing only the needed code for the swing robot.
-If you are reading this it is probably because you have been given the task of setting the robot up to run on a new coputer or because the old one failed.
+If you are reading this it is probably because you have been given the task of setting the robot up to run on a new computer.
 
 ## General notes for the setup
 The setup consists of 2 computers, the computer on which the computations are done and the computer inside the ev3 lego mindstorm. The first computer is nessecary because the computer inside the ev3 is so bad that it cannot do the computations needed for reinforcement learning, even tough this is a very small computational problem.
@@ -16,4 +16,4 @@ From your computer, you ssh into the robot with "ssh robot@ev3dev.local" (or sub
 run the script "rpyc_server.sh" located in the home folder.
 Then, from your computer, you can check if the connection using the check_con.py script.
 Is the samme manner you can make the robot learn to swing using the swing_script.py file.
-NOTE: Near the end of the swing_script.py file there are some saved vales from different time in training, you can use these as initial valuesif you don't want to wait for the robot to learn swinging from nothing.
+NOTE: Near the end of the swing_script.py file there are some saved vales from different time in training, you can use these as initial values if you don't want to wait for the robot to learn swinging from nothing.
